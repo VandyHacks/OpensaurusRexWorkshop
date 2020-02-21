@@ -122,6 +122,7 @@
         MIN_JUMP_HEIGHT: 35,
         MOBILE_SPEED_COEFFICIENT: 1.2,
         RESOURCE_TEMPLATE_ID: 'audio-resources',
+        // BUG: Default value of speed is 6.
         SPEED: 6,
         SPEED_DROP_COEFFICIENT: 3
     };
@@ -467,9 +468,9 @@
                     'from { width:' + Trex.config.WIDTH + 'px }' +
                     'to { width: ' + this.dimensions.WIDTH + 'px }' +
                     '}';
-                
-                // create a style sheet to put the keyframe rule in 
-                // and then place the style sheet in the html head    
+
+                // create a style sheet to put the keyframe rule in
+                // and then place the style sheet in the html head
                 var sheet = document.createElement('style');
                 sheet.innerHTML = keyframes;
                 document.head.appendChild(sheet);
@@ -1524,6 +1525,7 @@
      */
     Trex.config = {
         DROP_VELOCITY: -5,
+        // BUG: Where gravity would be changed. Default Value: 0.6.
         GRAVITY: 0.6,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
@@ -1882,10 +1884,11 @@
     /**
      * @enum {number}
      */
+     // BUG: Width should be 10, height should be 13, DEST_WIDTH should be 11.
     DistanceMeter.dimensions = {
-        WIDTH: 10,
-        HEIGHT: 13,
-        DEST_WIDTH: 11
+        WIDTH: 0,
+        HEIGHT: 0,
+        DEST_WIDTH: 0
     };
 
 
