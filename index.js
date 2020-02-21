@@ -1886,9 +1886,9 @@
      */
      // BUG: Width should be 10, height should be 13, DEST_WIDTH should be 11.
     DistanceMeter.dimensions = {
-        WIDTH: 0,
-        HEIGHT: 0,
-        DEST_WIDTH: 0
+        WIDTH: 10,
+        HEIGHT: 13,
+        DEST_WIDTH: 11
     };
 
 
