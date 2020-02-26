@@ -54,6 +54,8 @@ html, body {
   position: absolute;
   top: 0;
   z-index: 2;
+  /* Added for Hackpack*/
+  background-color: #ff67c4;
 }
 
 .offline .controller {
