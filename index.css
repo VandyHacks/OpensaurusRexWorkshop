@@ -7,6 +7,8 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
+    /* Added for Hackpack*/
+    background-color: #ff67c4;
 }
 
 .icon {
@@ -54,8 +56,6 @@ html, body {
   position: absolute;
   top: 0;
   z-index: 2;
-  /* Added for Hackpack*/
-  background-color: #ff67c4;
 }
 
 .offline .controller {
