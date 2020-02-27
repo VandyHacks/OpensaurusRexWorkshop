@@ -2,6 +2,8 @@
 HackPack for VandyHack's workshop about Open Source on March 12th.
 Credit to https://github.com/wayou/t-rex-runner for source code.
 
+<img src="https://github.com/wayou/t-rex-runner/raw/gh-pages/assets/screenshot.gif" width="860" align="center"/>
+
 ## What is Open Source?
 A project is 'open source' if:
 * source code is **freely available** to the public
@@ -38,4 +40,3 @@ Version control allows contributors to:
 * Hide the score
 * Change the sound that is played when player reach 100 points
 * BE CREATIVE!!
-<img src="https://github.com/wayou/t-rex-runner/raw/gh-pages/assets/screenshot.gif" width="860" align="center"/>
