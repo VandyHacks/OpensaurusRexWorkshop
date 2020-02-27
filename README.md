@@ -34,9 +34,9 @@ Version control allows contributors to:
 * `$ git push` - upload (or push) cloned/local repository to the remote/original repository
 
 ## Suggested changes:
-* Changing the image of the dinosaur (change the runner to pink!)
-* Jumping / changing constants
-* Change the speed, etc.
-* Hide the score
-* Change the sound that is played when player reach 100 points
-* BE CREATIVE!!
+[] Changing the image of the dinosaur (change the runner to pink!)
+[] Jumping / changing constants
+[] Change the speed, etc.
+[] Hide the score
+[] Change the sound that is played when player reach 100 points
+[] BE CREATIVE!!
