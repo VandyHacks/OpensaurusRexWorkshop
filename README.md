@@ -34,7 +34,7 @@ Version control allows contributors to:
 * `$ git push` - upload (or push) cloned/local repository to the remote/original repository
 
 ## Suggested changes:
-- [ ] Changing the image of the dinosaur (change the runner to pink!)
+- [ ] Changing the image of the dinosaur (change the runner to pink!). Hint: assets/dino-100.png, and assets/dino-200.png are the correct assets. 
 - [ ] Jumping / changing constants
 - [ ] Change the speed, etc.
 - [ ] Hide the score
