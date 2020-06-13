@@ -567,10 +567,11 @@
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
+                    // Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
                     Math.ceil(this.distanceRan));
 
                 if (playAchievementSound) {
-                    this.playSound(/* INSERT SOUND HERE */);
+                    this.playSound(/* GROUP1: INSERT SOUND HERE */);
                 }
 
                 // Night mode.
@@ -683,7 +684,7 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        this.playSound(/* INSERT SOUND HERE */);
+                        this.playSound(/* GROUP1: INSERT SOUND HERE */);
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -771,7 +772,7 @@
          * Game over state.
          */
         gameOver: function () {
-            this.playSound(/* INSERT SOUND HERE */);
+            this.playSound(/* GROUP1: INSERT SOUND HERE */);
             vibrate(200);
 
             this.stop();
@@ -792,7 +793,7 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                this.distanceMeter.setHighScore(this.highestScore);
+                this.distanceMeter.setHighScore(/* GROUP2: INSERT HIGH SCORE HERE */);
             }
 
             // Reset the time clock.
@@ -830,7 +831,7 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                this.playSound(/* INSERT SOUND HERE */);
+                this.playSound(/* GROUP1: INSERT SOUND HERE */);
                 this.invert(true);
                 this.update();
             }
@@ -2070,6 +2071,7 @@
             }
 
             this.drawHighScore();
+            /* GROUP2: INSERT HIGHSCORE FUNCTION HERE */
             return playSound;
         },
 
