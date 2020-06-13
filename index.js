@@ -570,7 +570,7 @@
                     Math.ceil(this.distanceRan));
 
                 if (playAchievementSound) {
-                    this.playSound(this.soundFx.SCORE);
+                    this.playSound(/* INSERT SOUND HERE */);
                 }
 
                 // Night mode.
@@ -683,7 +683,7 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        this.playSound(this.soundFx.BUTTON_PRESS);
+                        this.playSound(/* INSERT SOUND HERE */);
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -771,7 +771,7 @@
          * Game over state.
          */
         gameOver: function () {
-            this.playSound(this.soundFx.HIT);
+            this.playSound(/* INSERT SOUND HERE */);
             vibrate(200);
 
             this.stop();
@@ -830,7 +830,7 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                this.playSound(this.soundFx.BUTTON_PRESS);
+                this.playSound(/* INSERT SOUND HERE */);
                 this.invert(true);
                 this.update();
             }
