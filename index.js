@@ -35,7 +35,7 @@
         this.distanceMeter = null;
         this.distanceRan = 0;
 
-        this.highestScore = 0;
+        this.highestScore = 0; 
 
         this.time = 0;
         this.runningTime = 0;
@@ -570,8 +570,12 @@
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
+<<<<<<< HEAD
                     // Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
                     /*Math.ceil(this.distanceRan)*/);
+=======
+                    Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
+>>>>>>> 844320f10a2f8b0dcf4d06dac6b233a123dc0fb7
 
                 if (playAchievementSound) {
                     this.playSound(/* GROUP1: INSERT SOUND HERE */);
@@ -1867,8 +1871,8 @@
         this.canvasCtx = canvas.getContext('2d');
         this.image = Runner.imageSprite;
         this.spritePos = spritePos;
-        this.x = 0;
-        this.y = 5;
+        this.x = /* GROUP2: UPDATE SCOREBOARD COORDINATES HERE */ 10000;
+        this.y = /* GROUP 2:UPDATE SCOREBOARD COORDINATES HERE */ 10000; 
 
         this.currentDistance = 0;
         this.maxScore = 0;
@@ -2076,8 +2080,7 @@
                 }
             }
 
-            this.drawHighScore();
-            /* GROUP2: INSERT HIGHSCORE FUNCTION HERE */
+            /* GROUP2: INSERT DRAW HIGHSCORE FUNCTION HERE */
             return playSound;
         },
 
