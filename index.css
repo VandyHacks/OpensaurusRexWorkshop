@@ -5,7 +5,8 @@
 html, body {
   padding: 0;
   margin: 0;
-  width: 100%;
+  /* GROUP 4: Change to 100% */
+  width: 50%;
   height: auto;
   /* Added for Hackpack*/
   background-color: #ff67c4;
@@ -42,8 +43,9 @@ html, body {
 .offline .runner-container {
   height: 150px;
   max-width: 600px;
+  /* GROUP 4 change overflow to absolute */
   overflow: hidden;
-  position: absolute;
+  position: relative;
   top: 35px;
   width: 44px;
 }

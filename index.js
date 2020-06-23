@@ -566,16 +566,12 @@
                     }
                 } else {
                     /* @GROUP 3 */
-                    // this.gameOver();
+                    this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-<<<<<<< HEAD
-                   Math.ceil(/*this.distanceRan*/));
-=======
                     // Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
-                    Math.ceil(this.distanceRan));
->>>>>>> 5bf848c5da2d95eb0f07df14a1088160f2a3cd32
+                    /*Math.ceil(this.distanceRan)*/);
 
                 if (playAchievementSound) {
                     this.playSound(/* GROUP1: INSERT SOUND HERE */);
@@ -791,9 +787,10 @@
 
             // Game over panel.
             if (!this.gameOverPanel) {
-                this.gameOverPanel = new GameOverPanel(this.canvas,
-                    this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
-                    this.dimensions);
+                /* GROUP 3 */
+                // this.gameOverPanel = new GameOverPanel(this.canvas,
+                //     this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
+                //     this.dimensions);
             } else {
                 this.gameOverPanel.draw();
             }
@@ -801,11 +798,7 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-<<<<<<< HEAD
-                this .distanceMeter.setHighScore();
-=======
                 this.distanceMeter.setHighScore(/* GROUP2: INSERT HIGH SCORE HERE */);
->>>>>>> 5bf848c5da2d95eb0f07df14a1088160f2a3cd32
             }
 
             // Reset the time clock.
