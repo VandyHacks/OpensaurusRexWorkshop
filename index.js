@@ -570,10 +570,15 @@
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
+<<<<<<< HEAD
                    Math.ceil(/*this.distanceRan*/));
+=======
+                    // Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
+                    Math.ceil(this.distanceRan));
+>>>>>>> 5bf848c5da2d95eb0f07df14a1088160f2a3cd32
 
                 if (playAchievementSound) {
-                    this.playSound(/* INSERT SOUND HERE */);
+                    this.playSound(/* GROUP1: INSERT SOUND HERE */);
                 }
 
                 // Night mode.
@@ -686,7 +691,7 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        this.playSound(/* INSERT SOUND HERE */);
+                        this.playSound(/* GROUP1: INSERT SOUND HERE */);
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -775,7 +780,7 @@
          * Game over state.
          */
         gameOver: function () {
-            this.playSound(/* INSERT SOUND HERE */);
+            this.playSound(/* GROUP1: INSERT SOUND HERE */);
             vibrate(200);
 
             this.stop();
@@ -796,7 +801,11 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
+<<<<<<< HEAD
                 this .distanceMeter.setHighScore();
+=======
+                this.distanceMeter.setHighScore(/* GROUP2: INSERT HIGH SCORE HERE */);
+>>>>>>> 5bf848c5da2d95eb0f07df14a1088160f2a3cd32
             }
 
             // Reset the time clock.
@@ -834,7 +843,7 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                this.playSound(/* INSERT SOUND HERE */);
+                this.playSound(/* GROUP1: INSERT SOUND HERE */);
                 this.invert(true);
                 this.update();
             }
@@ -2075,6 +2084,7 @@
             }
 
             this.drawHighScore();
+            /* GROUP2: INSERT HIGHSCORE FUNCTION HERE */
             return playSound;
         },
 
