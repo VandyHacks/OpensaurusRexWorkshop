@@ -190,6 +190,8 @@
      * Sound FX. Reference to the ID of the audio tag on interstitial page.
      * @enum {string}
      */
+
+    /* SOUNDS ARE HERE! */
     Runner.sounds = {
         BUTTON_PRESS: 'offline-sound-press',
         HIT: 'offline-sound-hit',
@@ -563,11 +565,12 @@
                         this.currentSpeed += this.config.ACCELERATION;
                     }
                 } else {
-                    this.gameOver();
+                    /* @GROUP 3 */
+                    // this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-                    Math.ceil(this.distanceRan));
+                   Math.ceil(/*this.distanceRan*/));
 
                 if (playAchievementSound) {
                     this.playSound(/* INSERT SOUND HERE */);
@@ -701,7 +704,8 @@
                     this.tRex.setSpeedDrop();
                 } else if (!this.tRex.jumping && !this.tRex.ducking) {
                     // Duck.
-                    this.tRex.setDuck(true);
+                    /* @GROUP 3 */
+                    this.tRex.setDuck(false);
                 }
             }
         },
@@ -792,7 +796,7 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                this.distanceMeter.setHighScore(this.highestScore);
+                this .distanceMeter.setHighScore();
             }
 
             // Reset the time clock.
@@ -1526,7 +1530,8 @@
     Trex.config = {
         DROP_VELOCITY: -5,
         // BUG: Where gravity would be changed. Default Value: 0.6.
-        GRAVITY: 0.6,
+        /* @ GROUP 3 */
+        GRAVITY: 9,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
         INIITAL_JUMP_VELOCITY: -10,
