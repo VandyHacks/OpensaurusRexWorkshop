@@ -122,7 +122,6 @@
         MIN_JUMP_HEIGHT: 35,
         MOBILE_SPEED_COEFFICIENT: 1.2,
         RESOURCE_TEMPLATE_ID: 'audio-resources',
-        // BUG: Default value of speed is 6.
         SPEED: 6,
         SPEED_DROP_COEFFICIENT: 3
     };
@@ -1525,7 +1524,6 @@
      */
     Trex.config = {
         DROP_VELOCITY: -5,
-        // BUG: Where gravity would be changed. Default Value: 0.6.
         GRAVITY: 0.6,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
@@ -1884,7 +1882,6 @@
     /**
      * @enum {number}
      */
-     // BUG: Width should be 10, height should be 13, DEST_WIDTH should be 11.
     DistanceMeter.dimensions = {
         WIDTH: 10,
         HEIGHT: 13,
