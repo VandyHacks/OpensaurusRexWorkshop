@@ -570,12 +570,7 @@
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-<<<<<<< HEAD
-                    // Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
-                    /*Math.ceil(this.distanceRan)*/);
-=======
                     Math.ceil(/* GROUP2: INSERT DISTANCE HERE */));
->>>>>>> 844320f10a2f8b0dcf4d06dac6b233a123dc0fb7
 
                 if (playAchievementSound) {
                     this.playSound(/* GROUP1: INSERT SOUND HERE */);
