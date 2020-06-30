@@ -565,7 +565,7 @@
                         this.currentSpeed += this.config.ACCELERATION;
                     }
                 } else {
-                    /* @GROUP 3 */
+                    /* @GROUP3 */
                     this.gameOver();
                 }
 
@@ -704,7 +704,7 @@
                     this.tRex.setSpeedDrop();
                 } else if (!this.tRex.jumping && !this.tRex.ducking) {
                     // Duck.
-                    /* @GROUP 3 */
+                    /* @GROUP3 */
                     this.tRex.setDuck(false);
                 }
             }
@@ -786,7 +786,7 @@
 
             // Game over panel.
             if (!this.gameOverPanel) {
-                /* GROUP 3 */
+                /* GROUP3 */
                 // this.gameOverPanel = new GameOverPanel(this.canvas,
                 //     this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
                 //     this.dimensions);
@@ -1531,7 +1531,7 @@
     Trex.config = {
         DROP_VELOCITY: -5,
         // BUG: Where gravity would be changed. Default Value: 0.6.
-        /* @ GROUP 3 */
+        /* @ GROUP3 */
         GRAVITY: 9,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
@@ -1867,7 +1867,7 @@
         this.image = Runner.imageSprite;
         this.spritePos = spritePos;
         this.x = /* GROUP2: UPDATE SCOREBOARD COORDINATES HERE */ 10000;
-        this.y = /* GROUP 2:UPDATE SCOREBOARD COORDINATES HERE */ 10000; 
+        this.y = /* GROUP2:UPDATE SCOREBOARD COORDINATES HERE */ 10000; 
 
         this.currentDistance = 0;
         this.maxScore = 0;
