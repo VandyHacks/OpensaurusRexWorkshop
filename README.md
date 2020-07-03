@@ -8,7 +8,6 @@ Credit to https://github.com/wayou/t-rex-runner for source code.
 A project is 'open source' if:
 * source code is **freely available** to the public
 * source code can be **copied, modified, and redistributed** by anyone
-<img src="http://gifimgs.com/res/0220/5e5774f901f95527025236.gif" width="400" align="right"/>
 
 ## What is Version Control?
 A system that records changes made to a project over time and stores previous or multiple states.
