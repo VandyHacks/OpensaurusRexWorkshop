@@ -35,7 +35,7 @@
         this.distanceMeter = null;
         this.distanceRan = 0;
 
-        this.highestScore = 0;
+        this.highestScore = 0; 
 
         this.time = 0;
         this.runningTime = 0;
@@ -189,6 +189,8 @@
      * Sound FX. Reference to the ID of the audio tag on interstitial page.
      * @enum {string}
      */
+
+    /* SOUNDS ARE HERE! */
     Runner.sounds = {
         BUTTON_PRESS: 'offline-sound-press',
         HIT: 'offline-sound-hit',
@@ -562,14 +564,17 @@
                         this.currentSpeed += this.config.ACCELERATION;
                     }
                 } else {
-                    this.gameOver();
+                    /* @GROUP3: There is NO way to lose this game. Uncomment the next line to activate CONSEQUENCES */
+                    // this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-                    Math.ceil(this.distanceRan));
+                    /* GROUP2: Math.ceil isn't operating on anything. Add this.distanceRan between the parentheses */
+                    Math.ceil());
 
                 if (playAchievementSound) {
-                    this.playSound(this.soundFx.SCORE);
+                    /* GROUP1: We need a sound here! Insert this.soundFx.SCORE between the parentheses */
+                    this.playSound();
                 }
 
                 // Night mode.
@@ -682,7 +687,8 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        this.playSound(this.soundFx.BUTTON_PRESS);
+                        /* GROUP1: Buton sounds are always fun. To make this game fun (not that it's not fun), insert this.soundFx.BUTTON_PRESS in the parentheses below*/
+                        this.playSound();
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -700,7 +706,8 @@
                     this.tRex.setSpeedDrop();
                 } else if (!this.tRex.jumping && !this.tRex.ducking) {
                     // Duck.
-                    this.tRex.setDuck(true);
+                    /* @GROUP3: We want it to actually duck when you press the down key. Change false to true */
+                    this.tRex.setDuck(false);
                 }
             }
         },
@@ -770,7 +777,8 @@
          * Game over state.
          */
         gameOver: function () {
-            this.playSound(this.soundFx.HIT);
+            /* GROUP1: Rub some salt in that wound. Insert this.soundFx.HIT between the parentheses to play a sound when the dino dies */
+            this.playSound();
             vibrate(200);
 
             this.stop();
@@ -781,9 +789,10 @@
 
             // Game over panel.
             if (!this.gameOverPanel) {
-                this.gameOverPanel = new GameOverPanel(this.canvas,
-                    this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
-                    this.dimensions);
+                /* GROUP3: Oops I commented this out?? Please uncomment the next 3 lines?? */
+                // this.gameOverPanel = new GameOverPanel(this.canvas,
+                //     this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
+                //     this.dimensions);
             } else {
                 this.gameOverPanel.draw();
             }
@@ -791,7 +800,8 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                this.distanceMeter.setHighScore(this.highestScore);
+                /* GROUP2: What's a game without a high score? Insert this.highestScore between the parentheses */
+                this.distanceMeter.setHighScore();
             }
 
             // Reset the time clock.
@@ -829,7 +839,8 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                this.playSound(this.soundFx.BUTTON_PRESS);
+                /* GROUP1: I don't have anything to say about this one. Just stick this.soundFx.BUTTON_PRESS between the parentheses*/
+                this.playSound();
                 this.invert(true);
                 this.update();
             }
@@ -1524,7 +1535,8 @@
      */
     Trex.config = {
         DROP_VELOCITY: -5,
-        GRAVITY: 0.6,
+        /* GROUP3: The poor thing literally can't jump because we're using Dragonball Z gravity. Change this to 0.6*/
+        GRAVITY: 9.001,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
         INIITAL_JUMP_VELOCITY: -10,
@@ -1858,8 +1870,9 @@
         this.canvasCtx = canvas.getContext('2d');
         this.image = Runner.imageSprite;
         this.spritePos = spritePos;
-        this.x = 0;
-        this.y = 5;
+        /* GROUP2: These are completely unreasonable coordinates. Change this.x to 0 and this.y to 5*/
+        this.x = 10000;
+        this.y = 10000; 
 
         this.currentDistance = 0;
         this.maxScore = 0;
@@ -2066,7 +2079,8 @@
                 }
             }
 
-            this.drawHighScore();
+            /* GROUP2: There's no way to see your high score! Oh no! Uncomment the next line! */
+            //this.drawHighScore();
             return playSound;
         },
 
