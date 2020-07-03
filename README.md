@@ -33,10 +33,13 @@ Version control allows contributors to:
 * `$ git commit -m “commit message”` - commit and save staged changes locally (in your cloned repository)
 * `$ git push` - upload (or push) cloned/local repository to the remote/original repository
 
-## Suggested changes:
-- [ ] Changing the image of the dinosaur (change the runner to pink!). Hint: assets/dino-100.png, and assets/dino-200.png are the correct assets. 
-- [ ] Jumping / changing constants
-- [ ] Change the speed, etc.
-- [ ] Hide the score
-- [ ] Change the sound that is played when player reach 100 points
-- [ ] BE CREATIVE!!
+## Forking and Pull Requests
+* Fork: Get a copy of the repo that you own and can do anything with
+* Pull Request: After you make changes of a fork, ask the owner of the main repo to apply them. Also good practice to do this with branches on your own projects!
+
+## Debugging Challenges:
+- There are 4 categories of issues to resolve (3 ~ 4 debugging challenges per category):
+- [ ] Sound doesn’t play when it should
+- [ ] Scoreboard is broken
+- [ ] Game doesn’t restart
+- [ ] Everything is off-center
