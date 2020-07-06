@@ -562,8 +562,7 @@
                         this.currentSpeed += this.config.ACCELERATION;
                     }
                 } else {
-                    /* @GROUP3: There is NO way to lose this game. Uncomment the next line to activate CONSEQUENCES */
-                    // this.gameOver();
+                    this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
@@ -701,8 +700,7 @@
                     this.tRex.setSpeedDrop();
                 } else if (!this.tRex.jumping && !this.tRex.ducking) {
                     // Duck.
-                    /* @GROUP3: We want it to actually duck when you press the down key. Change false to true */
-                    this.tRex.setDuck(false);
+                    this.tRex.setDuck(true);
                 }
             }
         },
@@ -783,10 +781,9 @@
 
             // Game over panel.
             if (!this.gameOverPanel) {
-                /* GROUP3: Oops I commented this out?? Please uncomment the next 3 lines?? */
-                // this.gameOverPanel = new GameOverPanel(this.canvas,
-                //     this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
-                //     this.dimensions);
+                this.gameOverPanel = new GameOverPanel(this.canvas,
+                    this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
+                    this.dimensions);
             } else {
                 this.gameOverPanel.draw();
             }
@@ -1527,8 +1524,7 @@
      */
     Trex.config = {
         DROP_VELOCITY: -5,
-        /* GROUP3: The poor thing literally can't jump because we're using Dragonball Z gravity. Change this to 0.6*/
-        GRAVITY: 9.001,
+        GRAVITY: 0.6,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
         INIITAL_JUMP_VELOCITY: -10,

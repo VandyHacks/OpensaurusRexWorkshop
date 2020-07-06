@@ -2,12 +2,12 @@
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file */
 
-html, body {
+ html, body {
   padding: 0;
   margin: 0;
-  width: 100%;
+  /* GROUP4: Why is everything so off to the side. Change the width to 100% */
+  width: 50%;
   height: auto;
-  /* Added for Hackpack*/
   background-color: #ff67c4;
 }
 
@@ -43,7 +43,8 @@ html, body {
   height: 150px;
   max-width: 600px;
   overflow: hidden;
-  position: absolute;
+  /* GROUP4: Spacing is STILL wack. Change position to absolute. */
+  position: relative;
   top: 35px;
   width: 44px;
 }
