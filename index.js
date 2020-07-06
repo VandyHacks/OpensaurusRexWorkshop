@@ -35,7 +35,7 @@
         this.distanceMeter = null;
         this.distanceRan = 0;
 
-        this.highestScore = 0; 
+        this.highestScore = 0;
 
         this.time = 0;
         this.runningTime = 0;
@@ -189,8 +189,6 @@
      * Sound FX. Reference to the ID of the audio tag on interstitial page.
      * @enum {string}
      */
-
-    /* SOUNDS ARE HERE! */
     Runner.sounds = {
         BUTTON_PRESS: 'offline-sound-press',
         HIT: 'offline-sound-hit',
@@ -564,19 +562,17 @@
                         this.currentSpeed += this.config.ACCELERATION;
                     }
                 } else {
-                    /* @GROUP3: There is NO way to lose this game. Uncomment the next line to activate CONSEQUENCES */
-                    // this.gameOver();
+                    this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-                    /* GROUP2: Math.ceil isn't operating on anything. Add this.distanceRan between the parentheses */
-                    Math.ceil());
+                    Math.ceil(this.distanceRan));
 
                 if (playAchievementSound) {
                     /* GROUP1: We need a sound here! Insert this.soundFx.SCORE between the parentheses */
                     this.playSound();
                 }
-
+                
                 // Night mode.
                 if (this.invertTimer > this.config.INVERT_FADE_DURATION) {
                     this.invertTimer = 0;
@@ -706,8 +702,7 @@
                     this.tRex.setSpeedDrop();
                 } else if (!this.tRex.jumping && !this.tRex.ducking) {
                     // Duck.
-                    /* @GROUP3: We want it to actually duck when you press the down key. Change false to true */
-                    this.tRex.setDuck(false);
+                    this.tRex.setDuck(true);
                 }
             }
         },
@@ -789,10 +784,9 @@
 
             // Game over panel.
             if (!this.gameOverPanel) {
-                /* GROUP3: Oops I commented this out?? Please uncomment the next 3 lines?? */
-                // this.gameOverPanel = new GameOverPanel(this.canvas,
-                //     this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
-                //     this.dimensions);
+                this.gameOverPanel = new GameOverPanel(this.canvas,
+                    this.spriteDef.TEXT_SPRITE, this.spriteDef.RESTART,
+                    this.dimensions);
             } else {
                 this.gameOverPanel.draw();
             }
@@ -800,8 +794,7 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                /* GROUP2: What's a game without a high score? Insert this.highestScore between the parentheses */
-                this.distanceMeter.setHighScore();
+                this.distanceMeter.setHighScore(this.highestScore);
             }
 
             // Reset the time clock.
@@ -1535,8 +1528,7 @@
      */
     Trex.config = {
         DROP_VELOCITY: -5,
-        /* GROUP3: The poor thing literally can't jump because we're using Dragonball Z gravity. Change this to 0.6*/
-        GRAVITY: 9.001,
+        GRAVITY: 0.6,
         HEIGHT: 47,
         HEIGHT_DUCK: 25,
         INIITAL_JUMP_VELOCITY: -10,
@@ -1870,9 +1862,8 @@
         this.canvasCtx = canvas.getContext('2d');
         this.image = Runner.imageSprite;
         this.spritePos = spritePos;
-        /* GROUP2: These are completely unreasonable coordinates. Change this.x to 0 and this.y to 5*/
-        this.x = 10000;
-        this.y = 10000; 
+        this.x = 0;
+        this.y = 5;
 
         this.currentDistance = 0;
         this.maxScore = 0;
@@ -2079,8 +2070,7 @@
                 }
             }
 
-            /* GROUP2: There's no way to see your high score! Oh no! Uncomment the next line! */
-            //this.drawHighScore();
+            this.drawHighScore();
             return playSound;
         },
 
