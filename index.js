@@ -566,13 +566,13 @@
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
-                    Math.ceil(this.distanceRan));
+                    /* GROUP2: Math.ceil isn't operating on anything. Add this.distanceRan between the parentheses */
+                    Math.ceil());
 
                 if (playAchievementSound) {
-                    /* GROUP1: We need a sound here! Insert this.soundFx.SCORE between the parentheses */
-                    this.playSound();
+                    this.playSound(this.soundFx.SCORE);
                 }
-                
+
                 // Night mode.
                 if (this.invertTimer > this.config.INVERT_FADE_DURATION) {
                     this.invertTimer = 0;
@@ -683,8 +683,7 @@
                     }
                     //  Play sound effect and jump on starting the game for the first time.
                     if (!this.tRex.jumping && !this.tRex.ducking) {
-                        /* GROUP1: Buton sounds are always fun. To make this game fun (not that it's not fun), insert this.soundFx.BUTTON_PRESS in the parentheses below*/
-                        this.playSound();
+                        this.playSound(this.soundFx.BUTTON_PRESS);
                         this.tRex.startJump(this.currentSpeed);
                     }
                 }
@@ -772,8 +771,7 @@
          * Game over state.
          */
         gameOver: function () {
-            /* GROUP1: Rub some salt in that wound. Insert this.soundFx.HIT between the parentheses to play a sound when the dino dies */
-            this.playSound();
+            this.playSound(this.soundFx.HIT);
             vibrate(200);
 
             this.stop();
@@ -794,7 +792,8 @@
             // Update the high score.
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
-                this.distanceMeter.setHighScore(this.highestScore);
+                /* GROUP2: What's a game without a high score? Insert this.highestScore between the parentheses */
+                this.distanceMeter.setHighScore();
             }
 
             // Reset the time clock.
@@ -832,8 +831,7 @@
                 this.distanceMeter.reset(this.highestScore);
                 this.horizon.reset();
                 this.tRex.reset();
-                /* GROUP1: I don't have anything to say about this one. Just stick this.soundFx.BUTTON_PRESS between the parentheses*/
-                this.playSound();
+                this.playSound(this.soundFx.BUTTON_PRESS);
                 this.invert(true);
                 this.update();
             }
@@ -1862,8 +1860,9 @@
         this.canvasCtx = canvas.getContext('2d');
         this.image = Runner.imageSprite;
         this.spritePos = spritePos;
-        this.x = 0;
-        this.y = 5;
+        /* GROUP2: These are completely unreasonable coordinates. Change this.x to 0 and this.y to 5*/
+        this.x = 10000;
+        this.y = 10000; 
 
         this.currentDistance = 0;
         this.maxScore = 0;
@@ -2070,7 +2069,8 @@
                 }
             }
 
-            this.drawHighScore();
+            /* GROUP2: There's no way to see your high score! Oh no! Uncomment the next line! */
+            //this.drawHighScore();
             return playSound;
         },
 
