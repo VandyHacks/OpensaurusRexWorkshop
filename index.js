@@ -563,7 +563,7 @@
                     }
                 } else {
                     /* @GROUP3: There is NO way to lose this game. Uncomment the next line to activate CONSEQUENCES */
-                    // this.gameOver();
+                    this.gameOver();
                 }
 
                 var playAchievementSound = this.distanceMeter.update(deltaTime,
